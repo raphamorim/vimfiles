@@ -41,6 +41,29 @@ inoremap <C-a>     <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
 inoremap <C-w>     <Esc>:tabclose<CR>
 
+set cursorline " Highlight current line
+set expandtab " Expand tabs to spaces
+set wrapscan " Searches wrap around end of file
+set history=1000 " Increase history from 20 default to 1000
+
+" JSON
+au BufRead,BufNewFile *.json set ft=json syntax=javascript
+
+" Jade
+au BufRead,BufNewFile *.jade set ft=jade syntax=jade
+
+" Common Ruby files
+au BufRead,BufNewFile Rakefile,Capfile,Gemfile,.autotest,.irbrc,*.treetop,*.tt set ft=ruby syntax=ruby
+
+" Nu
+au BufNewFile,BufRead *.nu,*.nujson,Nukefile setf nu
+
+" Coffee Folding
+au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
+
+" ZSH
+au BufRead,BufNewFile .zsh_rc,.functions,.commonrc set ft=zsh
+
 " highlight search
 :set hls
 " Press Space to turn off highlighting and clear any message already displayed.
