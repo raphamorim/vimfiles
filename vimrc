@@ -18,6 +18,12 @@ set number
 colorscheme lucario
 set autoindent
 
+" Execute Pathogen
+execute pathogen#infect()
+filetype plugin indent on
+autocmd vimenter * NERDTree  " Auto run NERDTree in first tab when you open
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif " run NERDTree automatically when vim starts up if no files were specified
+
 "Toggle auto-indenting for code paste
 "http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste
 set pastetoggle=<F2>
@@ -35,11 +41,13 @@ nnoremap <C-j> <C-x>
 nnoremap <C-a>     :tabnext<CR>
 nnoremap <C-t>     :tabnew<CR>
 nnoremap <C-w>     :tabclose<CR>
+nnoremap <C-y>     :NERDTreeToggle<CR>
 
 "inoremap <C-S-Tab> <Esc>:tabprevious<CR>i
 inoremap <C-a>     <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
 inoremap <C-w>     <Esc>:tabclose<CR>
+inoremap <C-y>     <Esc>:NERDTreeToggle<CR>
 
 set cursorline " Highlight current line
 set expandtab " Expand tabs to spaces
