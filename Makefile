@@ -2,12 +2,15 @@ PWD := $(shell pwd)
 
 install: clean
 	mkdir ~/.vim && cd ~/.vim && git clone git@github.com:raphamorim/vimfiles.git .
+	@echo "\n+ Lucario Color Scheme..."
+	mkdir -p ~/.vim/colors && cd ~/.vim/colors && git clone git@github.com:raphamorim/lucario.git vim/colors 
 	@echo "\n+ Pathogen..."
 	mkdir -p ~/.vim/autoload && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 	@echo "\n+ NERDTree..."
 	mkdir ~/.vim/bundle && cd ~/.vim/bundle && git clone https://github.com/scrooloose/nerdtree.git
 	@echo "\n+ Vim Airline..."
 	git clone https://github.com/bling/vim-airline ~/.vim/bundle/vim-airline
+	clear
 	@echo "\nDONE - Installation Complete\n"
 
 clean:
