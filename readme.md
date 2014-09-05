@@ -1,5 +1,7 @@
 # Vim Stack II - Attack of the Devs
 
+> This is my vim setup. Build and run faster!
+
 ## So why?
 
 To accelerate and improve my vim's setup, I've created this Makefile to create, load and install my vim's workspace. 
@@ -21,8 +23,11 @@ To accelerate and improve my vim's setup, I've created this Makefile to create, 
 You can change these shortcuts on .vimrc file
 
 `ctrl + T` = Open new tab
+
 `ctrl + W` = Close current tab
+
 `ctrl + A` = Switch between tabs
+
 `ctrl + Y` = Open and close NERD Tree (explore)
 
 ## About
