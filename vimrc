@@ -54,6 +54,9 @@ set expandtab " Expand tabs to spaces
 set wrapscan " Searches wrap around end of file
 set history=1000 " Increase history from 20 default to 1000
 
+" Golang
+au BufRead,BufNewFile *.go set ft=go syntax=c
+
 " JSON
 au BufRead,BufNewFile *.json set ft=json syntax=javascript
 
