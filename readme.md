@@ -28,7 +28,7 @@ You can change these shortcuts on .vimrc file
 
 `ctrl + A` = Switch between tabs
 
-`ctrl + Y` = Open and close NERD Tree (explore)
+`ctrl + X` = Open and close NERD Tree (:Explore)
 
 ## About
 
