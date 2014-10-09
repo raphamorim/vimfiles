@@ -41,13 +41,13 @@ nnoremap <C-j> <C-x>
 nnoremap <C-a>     :tabnext<CR>
 nnoremap <C-t>     :tabnew<CR>
 nnoremap <C-w>     :tabclose<CR>
-nnoremap <C-y>     :NERDTreeToggle<CR>
+nnoremap <C-x>     :NERDTreeToggle<CR>
 
 "inoremap <C-S-Tab> <Esc>:tabprevious<CR>i
 inoremap <C-a>     <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
 inoremap <C-w>     <Esc>:tabclose<CR>
-inoremap <C-y>     <Esc>:NERDTreeToggle<CR>
+inoremap <C-x>     <Esc>:NERDTreeToggle<CR>
 
 set cursorline " Highlight current line
 set expandtab " Expand tabs to spaces
