@@ -16,7 +16,12 @@ au BufWrite /private/etc/pw.* set nowritebackup nobackup
 syntax enable
 set number
 colorscheme lucario
+
+" Indent Tabs
 set autoindent
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 
 " Execute Pathogen
 execute pathogen#infect()
