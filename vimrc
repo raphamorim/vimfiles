@@ -17,6 +17,7 @@ syntax enable
 set number
 colorscheme lucario
 set autoindent
+set ignorecase
 
 " Execute Pathogen
 execute pathogen#infect()
@@ -30,9 +31,12 @@ set laststatus=2
 
 set encoding=utf-8  " Define file to utf-8
 
+" Indenting
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+set smartindent
+set cindent 
 
 " Easily increase and decrease next number with ctrl+k and ctrl+j
 nnoremap <C-k> <C-a>
