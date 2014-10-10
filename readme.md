@@ -22,11 +22,11 @@ To accelerate and improve my vim's setup, I've created this Makefile to create, 
 
 You can change these shortcuts on .vimrc file
 
-`ctrl + T` = Open new tab
+`ctrl + T` + `cntrl + H` = split window
 
-`ctrl + W` = Close current tab
+`ctrl + T` + `cntrl + V` = vertical split
 
-`ctrl + A` = Switch between tabs
+`ctrl + T` + `cntrl + W` = close current window
 
 `ctrl + X` = Open and close NERD Tree (:Explore)
 
