@@ -16,18 +16,11 @@ au BufWrite /private/etc/pw.* set nowritebackup nobackup
 syntax enable
 set number
 colorscheme lucario
-
-" Indent Tabs
 set autoindent
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
 
 " Execute Pathogen
 execute pathogen#infect()
 filetype plugin indent on
-autocmd vimenter * NERDTree  " Auto run NERDTree in first tab when you open
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif " run NERDTree automatically when vim starts up if no files were specified
 
 "Toggle auto-indenting for code paste
 "http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste
@@ -37,27 +30,32 @@ set laststatus=2
 
 set encoding=utf-8  " Define file to utf-8
 
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
 " Easily increase and decrease next number with ctrl+k and ctrl+j
 nnoremap <C-k> <C-a>
 nnoremap <C-j> <C-x>
 
 " tab navigation
-" nnoremap <C-S-Tab> :tabprevious<CR>
-nnoremap <C-a>     :tabnext<CR>
-nnoremap <C-t>     :tabnew<CR>
-nnoremap <C-w>     :tabclose<CR>
+nnoremap <C-t><C-h>     :split<CR>
+nnoremap <C-t><C-v>     :vsplit<CR>
+nnoremap <C-t><C-w>     :hide<CR>
 nnoremap <C-x>     :NERDTreeToggle<CR>
 
-"inoremap <C-S-Tab> <Esc>:tabprevious<CR>i
-inoremap <C-a>     <Esc>:tabnext<CR>i
-inoremap <C-t>     <Esc>:tabnew<CR>
-inoremap <C-w>     <Esc>:tabclose<CR>
-inoremap <C-x>     <Esc>:NERDTreeToggle<CR>
+inoremap <C-t><C-h>     <Esc>:split<CR>
+inoremap <C-t><C-v>     <Esc>:vsplit<CR>
+inoremap <C-t><C-w>     <Esc>:hide<CR>
+inoremap <C-x>          <Esc>:NERDTreeToggle<CR>
 
 set cursorline " Highlight current line
 set expandtab " Expand tabs to spaces
 set wrapscan " Searches wrap around end of file
 set history=1000 " Increase history from 20 default to 1000
+
+
+" -- Syntax --
 
 " Golang
 au BufRead,BufNewFile *.go set ft=go syntax=c
