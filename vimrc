@@ -90,6 +90,10 @@ set smartindent
 set cindent
 set showmatch " set show matching parenthesis
 
+" <TAB> completion in command-mode
+set wildmenu
+set wildmode=list:longest
+
 " better indentation
 vnoremap > >gv
 vnoremap < <gv
