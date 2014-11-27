@@ -2,6 +2,23 @@
 set modelines=0		" CVE-2007-2438
 
 set nowrap
+set autoindent
+set copyindent    " copy the previous indentation on autoindenting
+set shiftwidth=4
+
+" Changes leader key from "\" to ","
+let mapleader = ","
+
+" A running gvim will always have a window title, but when vim is run within an
+" xterm, by default it inherits the terminal’s current title.
+set title
+
+" When the cursor is moved outside the viewport of the current window, the
+" buffer is scrolled by a single line. Setting the option below will start the
+" scrolling three lines before the border, keeping more context around where
+" you’re working.
+set scrolloff=15
+
 " Normally we use vim-extensions. If you want true vi-compatibility
 " remove change the following statements
 set nocompatible	" Use Vim defaults instead of 100% vi compatibility
@@ -16,8 +33,43 @@ au BufWrite /private/etc/pw.* set nowritebackup nobackup
 syntax enable
 set number
 colorscheme lucario
-set autoindent
 set ignorecase
+
+set textwidth=80
+
+" Reset cursor position:
+function! ResCur()
+  if line("'\"") <= line("$")
+    normal! g`"
+    return 1
+  endif
+endfunction
+augroup resCur
+  autocmd!
+  autocmd BufWinEnter * call ResCur()
+augroup END
+
+ " Use the mouse
+set mouse=a
+
+" Ctrl+c to copy to clipboard (only works when VIM is open)
+map <C-c> "+y<CR>
+nnoremap <C-c> "+y<CR>
+inoremap <C-c> "+y<CR>
+
+" Show trailing characters and undesirable spaces
+set list
+set listchars=tab:▸\ ,trail:·,nbsp:~
+
+" Remove trailing spaces when save buffer
+autocmd BufWritePre * :%s/\s\+$//e
+
+set showmatch                       "blink matching bracket, etc
+set visualbell
+
+"set guifont=Monaco:h60
+"set guifont=Monospace:h60
+set guifont=Monospace\ 20
 
 " Execute Pathogen
 execute pathogen#infect()
@@ -32,11 +84,15 @@ set laststatus=2
 set encoding=utf-8  " Define file to utf-8
 
 " Indenting
-set tabstop=4
-set softtabstop=4
+set backspace=indent,eol,start
 set shiftwidth=4
 set smartindent
-set cindent 
+set cindent
+set showmatch " set show matching parenthesis
+
+" better indentation
+vnoremap > >gv
+vnoremap < <gv
 
 " Easily increase and decrease next number with ctrl+k and ctrl+j
 nnoremap <C-k> <C-a>
