@@ -30,10 +30,6 @@ You can change these shortcuts on .vimrc file
 
 `ctrl + X` = Open and close NERD Tree (:Explore)
 
-## Hint
-
-OS X Hint: vim /usr/share/vim/vimrc
-
 ## About
 
 License: MIT
