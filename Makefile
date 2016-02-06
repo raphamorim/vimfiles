@@ -2,6 +2,7 @@ PWD := $(shell pwd)
 
 install: clean
 	mkdir ~/.vim && cd ~/.vim && git clone https://github.com/raphamorim/vimfiles.git . 
+	cp ~/.vim/vimrc ~/.vimrc
 	@echo "\n+ Lucario Color Scheme..."
 	mkdir -p ~/.vim/colors && cd ~/.vim/colors
 	git clone https://github.com/raphamorim/lucario.git && cp lucario/vim/colors/lucario.vim ~/.vim/colors/lucario.vim
