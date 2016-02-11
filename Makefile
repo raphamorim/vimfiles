@@ -12,8 +12,6 @@ install: clean
 	mkdir ~/.vim/bundle && cd ~/.vim/bundle && git clone https://github.com/scrooloose/nerdtree.git
 	@echo "\n+ Vim Airline..."
 	git clone https://github.com/bling/vim-airline ~/.vim/bundle/vim-airline
-	@echo "\n+ Installing Powerline..."
-	pip install --user git+git://github.com/Lokaltog/powerline
 	clear
 	@echo "\nDONE - Installation Complete\n"
 
